@@ -6,7 +6,7 @@ module Static
 
 data StaticPtr a = StaticPtr String String
 
-foreign import staticStub :: forall a. -> StaticPtr a
+foreign import staticStub :: forall a. a -> StaticPtr a
 
 static :: forall a. a -> StaticPtr a
 static = staticStub
