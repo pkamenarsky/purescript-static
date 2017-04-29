@@ -1,23 +1,13 @@
 module Static
   ( StaticPtr
-  , StaticValue
-  , StaticPtrMap
   , static
   , derefStaticPtr
   ) where
 
-import Prelude
-import Data.Map as M
-import Unsafe.Coerce (unsafeCoerce)
-
 data StaticPtr a = StaticPtr String String
 
-data StaticValue = StaticValue (forall a. a)
-
 static :: forall a. a -> StaticPtr a
-static = unsafeCoerce unit
-
-type StaticPtrMap = M.Map
+static a = static a
 
 foreign import derefStaticPtrByModule :: forall a. String -> String -> a
 
