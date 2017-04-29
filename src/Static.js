@@ -6,6 +6,6 @@ exports.staticStub = function(a) {
 
 exports.derefStaticPtrByModule = function(module) {
   return function(ptr) {
-    return require(module).static_ptr_table[ptr];
+    return PS[module].static_ptr_table[ptr];
   };
 }

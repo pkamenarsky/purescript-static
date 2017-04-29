@@ -1,5 +1,5 @@
 module Static
-  ( StaticPtr
+  ( StaticPtr (..)
   , static
   , derefStaticPtr
   ) where
